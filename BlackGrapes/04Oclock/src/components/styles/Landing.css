@@ -15,16 +15,15 @@
 /* Background Giant Futuristic Watermark Typography - Split Left & Right */
 .hero-watermark-split {
   position: absolute;
-  top: 52%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  max-width: var(--cMaxWidth);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: clamp(260px, 34vw, 540px);
+  max-width: 100vw;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 0 clamp(16px, 3vw, 48px);
+  padding: 0 clamp(20px, 4vw, 70px);
   box-sizing: border-box;
   z-index: 4;
   pointer-events: none;
@@ -32,7 +31,7 @@
 
 .hero-watermark-side {
   font-family: "Geist", sans-serif;
-  font-size: clamp(36px, 8vw, 130px);
+  font-size: clamp(36px, 7vw, 115px);
   font-weight: 900;
   letter-spacing: clamp(-1px, -0.3vw, -4px);
   text-transform: uppercase;
@@ -48,16 +47,14 @@
 }
 
 .hero-watermark-left {
-  text-align: right;
-  justify-self: end;
+  text-align: left;
 }
 
 .hero-watermark-right {
-  text-align: left;
-  justify-self: start;
+  text-align: right;
 }
 
-/* Background Hero Video with Cinematic Blur Effect */
+/* Background Hero Video with Subtle Cinematic Blur */
 .hero-video-wrapper {
   position: absolute;
   top: 0;
@@ -74,8 +71,8 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: blur(10px) brightness(0.65) contrast(1.15);
-  transform: scale(1.08); /* Scales up slightly so blur does not show edge bleeding */
+  filter: blur(3px) brightness(0.78) contrast(1.08);
+  transform: scale(1.03); /* Slight scale to prevent blur edge bleeding */
 }
 
 .hero-video-blur-overlay {
@@ -84,24 +81,24 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.88) 100%);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.75) 100%);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
   pointer-events: none;
 }
 
 /* Background Robot Character Image - Fully Visible Center */
 .hero-character-wrapper {
   position: absolute;
-  top: clamp(65px, 8vh, 85px);
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -52%);
   z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: clamp(380px, 50vw, 750px);
-  height: clamp(520px, 80vh, 860px);
+  width: clamp(320px, 42vw, 680px);
+  height: clamp(480px, 75vh, 800px);
   pointer-events: none;
 }
 
