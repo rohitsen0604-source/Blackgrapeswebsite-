@@ -49,7 +49,7 @@ export const HomePage: React.FC = () => {
       <Landing />
 
       {/* Enterprise Technology Side-by-Side Section */}
-      <section className="section-container" style={{ padding: "80px 0", marginTop: "60px" }}>
+      <section className="section-container" style={{ padding: "80px 0" }}>
         <div style={{ maxWidth: "var(--cMaxWidth)", width: "var(--cWidth)", margin: "0 auto" }}>
           <div className="enterprise-tech-grid">
             {/* Left Column: Text Content & Capabilities CTA */}
@@ -107,7 +107,7 @@ export const HomePage: React.FC = () => {
       <IndustryWheelOrbit />
 
       {/* Client Trust Section - Infinite Single-Line Logo Marquee Loop */}
-      <section className="section-container" style={{ padding: "60px 0", borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+      <section className="section-container" style={{ padding: "80px 0", borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
         <div style={{ maxWidth: "100%", width: "100%", textAlign: "center" }}>
           <span className="section-tag">Client Trust & Global Reach</span>
           <h3 style={{ fontSize: "24px", color: "#ffffff", fontWeight: 800, margin: "8px 0 32px 0", letterSpacing: "-0.5px" }}>
@@ -132,7 +132,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Selected Work 3D Coverflow Curved Gallery */}
-      <section className="section-container" style={{ padding: "80px 0 40px 0" }}>
+      <section className="section-container" style={{ padding: "80px 0" }}>
         <div style={{ maxWidth: "var(--cMaxWidth)", width: "var(--cWidth)", margin: "0 auto" }}>
           <div className="section-head">
             <h2 className="section-title">Our Best Works</h2>
@@ -150,17 +150,19 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Final CTA Banner */}
-      <div style={{ maxWidth: "var(--cMaxWidth)", width: "var(--cWidth)", margin: "0 auto" }}>
-        <div className="cta-banner">
-          <h3>Have an Idea? Let's Build It.</h3>
-          <p>
-            Tell us what you're building. We'll help you turn the idea into a scalable, high-performance digital product.
-          </p>
-          <Link to="/contact" className="btn-primary">
-            Start a Project <MdArrowOutward />
-          </Link>
+      <section className="section-container" style={{ padding: "80px 0" }}>
+        <div style={{ maxWidth: "var(--cMaxWidth)", width: "var(--cWidth)", margin: "0 auto" }}>
+          <div className="cta-banner" style={{ margin: "0 auto" }}>
+            <h3>Have an Idea? Let's Build It.</h3>
+            <p>
+              Tell us what you're building. We'll help you turn the idea into a scalable, high-performance digital product.
+            </p>
+            <Link to="/contact" className="btn-primary">
+              Start a Project <MdArrowOutward />
+            </Link>
+          </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };
