@@ -253,10 +253,10 @@
   }
   .hero-character-wrapper {
     width: min(84vw, 360px);
-    height: clamp(380px, 58vh, 480px);
+    height: clamp(420px, 66vh, 530px);
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -58%);
+    transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -346,10 +346,10 @@
     margin: 0 auto;
   }
   .hero-character-wrapper {
-    width: min(80vw, 310px);
-    height: clamp(340px, 54vh, 440px);
+    width: min(80vw, 320px);
+    height: clamp(380px, 62vh, 480px);
     top: 50%;
-    transform: translate(-50%, -60%);
+    transform: translate(-50%, -50%);
   }
   .hero-watermark-split {
     top: 32%;
