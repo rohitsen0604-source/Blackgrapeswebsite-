@@ -346,11 +346,21 @@
   .why-choose-mobile-view {
     display: flex;
   }
+  .why-choose-bg-glow {
+    width: 320px;
+    height: 320px;
+    max-width: 100vw;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .why-choose-section {
     padding: 60px 0;
+  }
+  .why-choose-bg-glow {
+    width: 240px;
+    height: 240px;
+    max-width: 100vw;
   }
   .why-choose-mobile-grid {
     grid-template-columns: 1fr;

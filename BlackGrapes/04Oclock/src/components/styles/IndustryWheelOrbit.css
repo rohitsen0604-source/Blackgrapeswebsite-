@@ -438,31 +438,38 @@
     overflow-x: hidden;
   }
   .hex-outer {
-    width: 82px;
-    height: 95px;
+    width: 112px;
+    height: 128px;
   }
   .honeycomb-row {
-    gap: 4px;
-    margin-top: -22px;
+    gap: 8px;
+    margin-top: -30px;
   }
   .hex-inner {
-    padding: 8px 2px;
+    padding: 10px 4px;
   }
   .hex-icon {
-    font-size: 18px;
-    margin-bottom: 2px;
+    font-size: 24px;
+    margin-bottom: 4px;
   }
   .hex-label {
-    font-size: 7px;
-    letter-spacing: 0.1px;
-    line-height: 1.1;
-    max-width: 68px;
+    font-size: 9px;
+    letter-spacing: 0.2px;
+    line-height: 1.18;
+    max-width: 90px;
   }
   .honeycomb-modal-card {
-    padding: 22px 18px;
+    padding: 24px 20px;
     max-height: 85vh;
     overflow-y: auto;
-    border-radius: 18px;
+    border-radius: 20px;
+  }
+  .honeycomb-modal-close {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+    top: 14px;
+    right: 14px;
   }
   .honeycomb-modal-header {
     gap: 12px;
@@ -485,22 +492,52 @@
   }
 }
 
-/* Small Smartphone Responsive (< 360px) */
-@media screen and (max-width: 360px) {
+/* Common Smartphone Responsive (< 400px) */
+@media screen and (max-width: 400px) {
   .hex-outer {
-    width: 74px;
-    height: 85px;
+    width: 100px;
+    height: 115px;
   }
   .honeycomb-row {
-    gap: 3px;
-    margin-top: -19px;
+    gap: 6px;
+    margin-top: -26px;
+  }
+  .hex-inner {
+    padding: 8px 3px;
   }
   .hex-icon {
-    font-size: 16px;
+    font-size: 21px;
+    margin-bottom: 3px;
+  }
+  .hex-label {
+    font-size: 8px;
+    letter-spacing: 0.15px;
+    line-height: 1.15;
+    max-width: 82px;
+  }
+}
+
+/* Narrow Mobile Responsive (< 330px) */
+@media screen and (max-width: 330px) {
+  .hex-outer {
+    width: 92px;
+    height: 106px;
+  }
+  .honeycomb-row {
+    gap: 4px;
+    margin-top: -24px;
+  }
+  .hex-inner {
+    padding: 6px 2px;
+  }
+  .hex-icon {
+    font-size: 19px;
     margin-bottom: 2px;
   }
   .hex-label {
-    font-size: 6.5px;
-    max-width: 62px;
+    font-size: 7.5px;
+    letter-spacing: 0.1px;
+    line-height: 1.12;
+    max-width: 76px;
   }
 }

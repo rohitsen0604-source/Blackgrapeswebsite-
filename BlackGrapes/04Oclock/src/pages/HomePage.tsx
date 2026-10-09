@@ -57,10 +57,10 @@ export const HomePage: React.FC = () => {
               <span className="section-tag">ENTERPRISE TECHNOLOGY</span>
               <h2
                 style={{
-                  fontSize: "clamp(32px, 4.5vw, 54px)",
+                  fontSize: "clamp(24px, 5.2vw, 54px)",
                   fontWeight: 900,
                   color: "#ffffff",
-                  lineHeight: 1.1,
+                  lineHeight: 1.15,
                   margin: "12px 0 16px 0",
                   letterSpacing: "-1px",
                 }}

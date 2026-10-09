@@ -549,6 +549,20 @@
   }
 }
 
+.about-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 48px;
+  align-items: stretch;
+}
+
+.about-cards-subgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
 .mv-card {
   position: relative;
   border-radius: 24px;
@@ -764,6 +778,17 @@
   }
 
   /* Mission & Vision Cards */
+  .about-overview-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .about-cards-subgrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .about-cards-subgrid .mv-card {
+    min-height: auto !important;
+  }
   .mv-card {
     padding: 28px 20px;
     border-radius: 18px;

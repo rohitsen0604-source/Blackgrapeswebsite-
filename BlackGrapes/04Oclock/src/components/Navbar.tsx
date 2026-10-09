@@ -30,6 +30,16 @@ const Navbar = () => {
     };
   }, [isMobileMenuOpen]);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isMobileMenuOpen]);
+
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
@@ -40,10 +50,15 @@ const Navbar = () => {
 
   return (
     <>
-      <header className={`header-wrapper ${isScrolled ? "scrolled" : ""}`}>
+      <header className={`header-wrapper ${isScrolled ? "scrolled" : ""} ${isMobileMenuOpen ? "menu-open" : ""}`}>
         <div className="header">
           {/* Brand Logo Image */}
-          <Link to="/" className="brand-logo-link" data-cursor="disable">
+          <Link
+            to="/"
+            className="brand-logo-link"
+            data-cursor="disable"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
             <img
               src="/images/image.png"
               alt="BlackGrapesSofttech Logo"
@@ -77,7 +92,9 @@ const Navbar = () => {
           <button
             className="mobile-hamburger-btn"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle Navigation Menu"
+            aria-label={isMobileMenuOpen ? "Close Navigation Menu" : "Open Navigation Menu"}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-navigation-drawer"
           >
             {isMobileMenuOpen ? <MdClose /> : <MdMenu />}
           </button>
@@ -85,27 +102,46 @@ const Navbar = () => {
       </header>
 
       {/* Mobile Navigation Drawer */}
-      <div className={`mobile-menu-drawer ${isMobileMenuOpen ? "open" : ""}`}>
-        {navLinks.map((link) => {
-          const isActive = path === link.href || (link.href !== "/" && path.startsWith(link.href));
-          return (
-            <Link
-              key={link.name}
-              to={link.href}
-              className={`mobile-nav-link ${isActive ? "active" : ""}`}
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {link.name}
-            </Link>
-          );
-        })}
-        <Link
-          to="/contact"
-          className="mobile-cta-btn"
-          onClick={() => setIsMobileMenuOpen(false)}
-        >
-          Let's Talk
-        </Link>
+      <div
+        id="mobile-navigation-drawer"
+        className={`mobile-menu-drawer ${isMobileMenuOpen ? "open" : ""}`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile Navigation"
+      >
+        <nav className="mobile-drawer-nav">
+          {navLinks.map((link) => {
+            const isActive = path === link.href || (link.href !== "/" && path.startsWith(link.href));
+            return (
+              <Link
+                key={link.name}
+                to={link.href}
+                className={`mobile-nav-link ${isActive ? "active" : ""}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <span>{link.name}</span>
+                {isActive && <span className="mobile-nav-dot" />}
+              </Link>
+            );
+          })}
+        </nav>
+
+        <div className="mobile-drawer-footer">
+          <Link
+            to="/contact"
+            className="mobile-cta-btn"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Let's Talk <MdArrowOutward />
+          </Link>
+
+          <div className="mobile-drawer-contact-snippet">
+            <span className="mobile-drawer-tag">BLACKGRAPES SOFTECH</span>
+            <a href="mailto:info@blackgrapessoftech.com" className="mobile-drawer-email">
+              info@blackgrapessoftech.com
+            </a>
+          </div>
+        </div>
       </div>
     </>
   );

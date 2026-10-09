@@ -194,16 +194,23 @@ export const ProjectCoverflow: React.FC<ProjectCoverflowProps> = ({ projects }) 
         </button>
       </div>
 
-      {/* Dots Indicator */}
-      <div className="coverflow-dots-bar">
-        {projects.map((p, i) => (
-          <button
-            key={p.id}
-            className={`coverflow-dot ${i === activeIndex ? "active" : ""}`}
-            onClick={() => setActiveIndex(i)}
-            aria-label={`Go to project ${i + 1}`}
-          />
-        ))}
+      {/* Dots / Mobile Counter Indicator */}
+      <div className="coverflow-pagination-wrapper">
+        <div className="coverflow-counter-badge">
+          <span className="current-num">{String(activeIndex + 1).padStart(2, "0")}</span>
+          <span className="counter-divider">/</span>
+          <span className="total-num">{String(N).padStart(2, "0")}</span>
+        </div>
+        <div className="coverflow-dots-bar">
+          {projects.map((p, i) => (
+            <button
+              key={p.id}
+              className={`coverflow-dot ${i === activeIndex ? "active" : ""}`}
+              onClick={() => setActiveIndex(i)}
+              aria-label={`Go to project ${i + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

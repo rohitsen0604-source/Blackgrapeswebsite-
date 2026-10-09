@@ -34,18 +34,11 @@ export const AboutPage: React.FC = () => {
       {/* Who We Are & 3-Card Offset Grid */}
       <section className="section-container" style={{ padding: "60px 0 80px 0" }}>
         <div style={{ maxWidth: "var(--cMaxWidth)", width: "var(--cWidth)", margin: "0 auto" }}>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-              gap: "48px",
-              alignItems: "stretch",
-            }}
-          >
+          <div className="about-overview-grid">
             {/* Left Block: Who We Are Overview */}
             <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
               <span className="section-tag">Who We Are</span>
-              <h2 style={{ fontSize: "clamp(28px, 3.8vw, 46px)", color: "#ffffff", fontWeight: 900, margin: "12px 0 20px 0", lineHeight: 1.15 }}>
+              <h2 style={{ fontSize: "clamp(22px, 4.5vw, 46px)", color: "#ffffff", fontWeight: 900, margin: "12px 0 20px 0", lineHeight: 1.15 }}>
                 Built on Engineering Precision & Modern Speed
               </h2>
               <p style={{ fontSize: "16px", color: "#999", lineHeight: 1.7, marginBottom: "20px" }}>
@@ -57,14 +50,7 @@ export const AboutPage: React.FC = () => {
             </div>
 
             {/* Right Block: 3-Card Offset Grid */}
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-                gap: "20px",
-                alignItems: "stretch",
-              }}
-            >
+            <div className="about-cards-subgrid">
               {/* Left Stack: Our Mission & Our Vision */}
               <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
                 {/* Card 1: Our Mission */}
